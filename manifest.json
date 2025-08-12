@@ -1,0 +1,21 @@
+{
+  "name": "Cotizador - Nacional Seguros",
+  "short_name": "Cotizador Auto",
+  "description": "Calcula seguros de auto en Nacional Seguros",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#dee9f3",
+  "theme_color": "#025b93",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

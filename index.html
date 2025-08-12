@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="theme-color" content="#025b93">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Cotizador - Nacional">
+
+  <title>Cotizador - Nacional Seguros</title>
+
+  <!-- Favicon -->
+  <link rel="icon" href="image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath fill='%23025b93' d='M12 40h76v20H12z'/%3E%3Cpath fill='%23f36a10' d='M20 35h10v5H20zm50 0h10v5H70z'/%3E%3C/svg%3E">
+  <link rel="apple-touch-icon" href="icon-192.png">
+  <link rel="manifest" href="manifest.json">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Arial', sans-serif;
+      background: #dee9f3;
+      min-height: 100vh;
+      padding: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .container {
+      width: 100%;
+      max-width: 500px;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(54, 75, 97, 0.15);
+      overflow: hidden;
+      border: 1px solid #dee9f3;
+    }
+    .header {
+      background: #025b93;
+      color: white;
+      padding: 20px 15px;
+      text-align: center;
+      border-bottom: 4px solid #f36a10;
+    }
+    .header h1 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 5px;
+      word-wrap: break-word;
+      line-height: 1.3;
+    }
+    .header p {
+      font-size: 0.95rem;
+      opacity: 0.9;
+    }
+    .content {
+      padding: 20px;
+    }
+    .form-group {
+      margin-bottom: 20px;
+    }
+    .form-group label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: #364b61;
+      font-size: 0.95rem;
+    }
+    .input-wrapper {
+      position: relative;
+    }
+    input[type="text"], input[type="number"] {
+      width: 100%;
+      padding: 14px;
+      border: 2px solid #dee9f3;
+      border-radius: 8px;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      background: #ffffff;
+      color: #364b61;
+    }
+    input:focus {
+      outline: none;
+      border-color: #025b93;
+      box-shadow: 0 0 0 3px rgba(2, 91, 147, 0.1);
+    }
+    .currency-selector {
+      display: flex;
+      gap: 10px;
+      margin-top: 10px;
+    }
+    .currency-btn {
+      flex: 1;
+      padding: 11px;
+      border: 2px solid #dee9f3;
+      border-radius: 8px;
+      background: #dee9f3;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      text-align: center;
+      color: #025b93;
+    }
+    .currency-btn.active {
+      background: #025b93;
+      color: white;
+      border-color: #025b93;
+    }
+    .section-group {
+      display: flex;
+      gap: 15px;
+      margin-top: 15px;
+    }
+    .section {
+      min-width: 0;
+    }
+    .section-chino {
+      flex: 0 0 35%;
+      max-width: 140px;
+    }
+    .section-producto {
+      flex: 0 0 65%;
+    }
+
+    /* Sección chino */
+    .radio-group-chino {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-top: 5px;
+    }
+    .radio-option-chino {
+      padding: 10px;
+      border: 2px solid #dee9f3;
+      border-radius: 8px;
+      text-align: center;
+      cursor: pointer;
+      background: #dee9f3;
+      font-size: 0.85rem;
+      color: #364b61;
+      transition: all 0.2s ease;
+    }
+    .radio-option-chino:hover {
+      border-color: #025b93;
+      background: #e3f2fd;
+    }
+    .radio-option-chino.selected {
+      background: #025b93;
+      color: white;
+      border-color: #025b93;
+    }
+
+    /* Sección producto */
+    .product-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px;
+      margin-top: 5px;
+    }
+    .product-grid .radio-option {
+      padding: 10px 8px;
+      border: 2px solid #dee9f3;
+      border-radius: 8px;
+      text-align: center;
+      cursor: pointer;
+      background: #dee9f3;
+      font-size: 0.85rem;
+      color: #364b61;
+      transition: all 0.2s ease;
+    }
+    .product-grid .radio-option:hover {
+      border-color: #025b93;
+    }
+    .product-grid .radio-option.selected {
+      background: #025b93;
+      color: white;
+      border-color: #025b93;
+    }
+
+    /* Opciones avanzadas */
+    .advanced-toggle {
+      font-size: 0.9rem;
+      color: #025b93;
+      background: none;
+      border: none;
+      text-decoration: underline;
+      cursor: pointer;
+      padding: 5px 0;
+      margin-top: 10px;
+      text-align: left;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .advanced-options {
+      margin-top: 15px;
+      padding: 15px;
+      background: #dee9f3;
+      border-radius: 10px;
+      border: 1px solid #dee9f3;
+      display: none;
+    }
+    .advanced-options.active {
+      display: block;
+    }
+    .advanced-options label {
+      font-size: 0.9rem;
+      color: #364b61;
+    }
+    .advanced-options input[type="number"] {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+
+    /* Plan de cuotas */
+    .cuotas-selector {
+      display: flex;
+      gap: 8px;
+      margin-top: 5px;
+      flex-wrap: wrap;
+    }
+    .cuota-option {
+      flex: 1;
+      min-width: calc(25% - 8px);
+      padding: 10px;
+      border: 2px solid #dee9f3;
+      border-radius: 8px;
+      text-align: center;
+      cursor: pointer;
+      background: #dee9f3;
+      font-size: 0.85rem;
+      color: #364b61;
+      transition: all 0.2s ease;
+    }
+    .cuota-option:hover {
+      border-color: #025b93;
+      background: #e3f2fd;
+    }
+    .cuota-option.selected {
+      background: #025b93;
+      color: white;
+      border-color: #025b93;
+    }
+
+    .calculate-btn {
+      width: 100%;
+      background: #f36a10;
+      color: white;
+      padding: 16px;
+      border: none;
+      border-radius: 8px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 12px rgba(243, 106, 16, 0.2);
+      margin-top: 15px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+    }
+    .calculate-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(243, 106, 16, 0.3);
+    }
+    .calculate-btn:active {
+      transform: translateY(0);
+    }
+
+    .resultado {
+      background: #dee9f3;
+      margin-top: 25px;
+      padding: 20px;
+      border-radius: 10px;
+      border: 1px solid #dee9f3;
+    }
+    .resultado-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 15px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #025b93;
+    }
+    .resultado h2 {
+      font-size: 1.3rem;
+      color: #025b93;
+      font-weight: 700;
+    }
+    .copy-btn {
+      background: #025b93;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 8px 12px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 0.9rem;
+      transition: all 0.2s ease;
+      font-weight: 600;
+    }
+    .copy-btn:hover {
+      background: #024a7a;
+      transform: scale(1.05);
+    }
+    .resultado-content {
+      line-height: 1.6;
+    }
+    .resultado-item {
+      margin-bottom: 8px;
+      padding: 10px 12px;
+      background: white;
+      border-radius: 6px;
+      border-left: 3px solid #025b93;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+    .resultado-item.strong {
+      background: #ffffff;
+      border-left: 3px solid #f36a10;
+      font-weight: bold;
+    }
+    .resultado-item strong {
+      color: #025b93;
+      font-size: 0.95rem;
+    }
+    .resultado-item span {
+      color: #364b61;
+      font-size: 0.95rem;
+    }
+    .error {
+      background: #ffebee;
+      color: #c62828;
+      padding: 15px;
+      border-radius: 10px;
+      border-left: 4px solid #c62828;
+      margin-top: 15px;
+      font-weight: 500;
+    }
+    .success-message {
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #025b93;
+      color: white;
+      padding: 12px 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      z-index: 1000;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      pointer-events: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .success-message.show {
+      opacity: 1;
+    }
+    .whatsapp-btn {
+      width: 100%;
+      background: #25D366;
+      color: white;
+      padding: 14px;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+      margin-top: 15px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+    }
+    .whatsapp-btn:hover {
+      background: #128C7E;
+      transform: translateY(-2px);
+    }
+    .clear-btn {
+      background: none;
+      border: 1px solid #025b93;
+      color: #025b93;
+      padding: 8px 12px;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      margin-top: 10px;
+    }
+    .clear-btn:hover {
+      background: #025b93;
+      color: white;
+    }
+
+    @media (max-width: 480px) {
+      .section-group {
+        flex-direction: column;
+        gap: 20px;
+      }
+      .section-chino, .section-producto {
+        flex: 1;
+        max-width: none;
+      }
+      .product-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+      .header h1 {
+        font-size: 1.4rem;
+      }
+      .content {
+        padding: 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1><i class="fas fa-car"></i> Cotizador de Seguro</h1>
+      <p>Grupo Patrimoniales - Mauricio V</p>
+    </div>
+    <div class="content">
+      <div class="form-group">
+        <label for="marca">Marca del vehículo</label>
+        <div class="input-wrapper">
+          <input type="text" id="marca" placeholder="Ej. Toyota Rav4, Nissan March...">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="valor">Valor comercial</label>
+        <div class="input-wrapper">
+          <input type="number" id="valor" placeholder="Ej. usd 25,000 ó bs 175,000...">
+        </div>
+        <div class="currency-selector">
+          <button class="currency-btn active" data-value="usd">USD ($)</button>
+          <button class="currency-btn" data-value="bs">Bolivianos (Bs)</button>
+        </div>
+      </div>
+      <div class="section-group">
+        <div class="section section-chino">
+          <label>¿Es chino?</label>
+          <div class="radio-group-chino">
+            <div class="radio-option-chino selected" data-name="chino" data-value="no">No</div>
+            <div class="radio-option-chino" data-name="chino" data-value="si">Sí</div>
+          </div>
+        </div>
+        <div class="section section-producto">
+          <label>Producto:</label>
+          <div class="product-grid">
+            <div class="radio-option selected" data-name="producto" data-value="autotal">Autotal 100</div>
+            <div class="radio-option" data-name="producto" data-value="vagoneta">Vagoneta Segura</div>
+            <div class="radio-option" data-name="producto" data-value="autotal500">Autotal 500</div>
+            <div class="radio-option" data-name="producto" data-value="pesado">A. Pesado</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Opciones avanzadas -->
+      <button type="button" class="advanced-toggle" onclick="toggleAdvanced()">
+        <i class="fas fa-cog"></i> Opciones avanzadas
+      </button>
+
+      <div class="advanced-options" id="advancedOptions">
+        <label for="tasaPersonalizada">Tasa personalizada (%)</label>
+        <input type="number" id="tasaPersonalizada" step="0.001" placeholder="Ej. 3.2" value="3.2">
+
+        <label style="margin-top: 10px;">Plan de cuotas</label>
+        <div class="cuotas-selector" id="cuotasSelector">
+          <div class="cuota-option" data-cuotas="3">Inicial + 3 cuotas</div>
+          <div class="cuota-option" data-cuotas="4">Inicial + 4 cuotas</div>
+          <div class="cuota-option" data-cuotas="5">Inicial + 5 cuotas</div>
+          <div class="cuota-option selected" data-cuotas="6">Inicial + 6 cuotas</div>
+        </div>
+      </div>
+
+      <button class="calculate-btn" onclick="calcular()">
+        <i class="fas fa-calculator"></i> Calcular Cotización
+      </button>
+      <div class="resultado" id="resultado" style="display: none;"></div>
+    </div>
+  </div>
+  <div class="success-message" id="successMessage">
+    <i class="fas fa-check-circle"></i> ¡Cotización copiada!
+  </div>
+
+  <script>
+    // Manejo de selección de moneda
+    document.querySelectorAll('.currency-btn').forEach(btn => {
+      btn.addEventListener('click', function() {
+        document.querySelectorAll('.currency-btn').forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+      });
+    });
+
+    // Manejo de selección de opciones "¿Es chino?"
+    document.querySelectorAll('.radio-option-chino').forEach(option => {
+      option.addEventListener('click', function() {
+        document.querySelectorAll('.radio-option-chino').forEach(opt => {
+          opt.classList.remove('selected');
+        });
+        this.classList.add('selected');
+      });
+    });
+
+    // Manejo de selección de producto
+    document.querySelectorAll('.product-grid .radio-option').forEach(option => {
+      option.addEventListener('click', function() {
+        document.querySelectorAll('.product-grid .radio-option').forEach(opt => {
+          opt.classList.remove('selected');
+        });
+        this.classList.add('selected');
+      });
+    });
+
+    // Manejo de selección de cuotas
+    document.querySelectorAll('.cuota-option').forEach(option => {
+      option.addEventListener('click', function() {
+        document.querySelectorAll('.cuota-option').forEach(opt => {
+          opt.classList.remove('selected');
+        });
+        this.classList.add('selected');
+      });
+    });
+
+    function toggleAdvanced() {
+      const advanced = document.getElementById('advancedOptions');
+      advanced.classList.toggle('active');
+      if (advanced.classList.contains('active')) {
+        const producto = document.querySelector('.product-grid .radio-option.selected').getAttribute('data-value');
+        let tasa = 3.2;
+        if (producto === 'vagoneta') tasa = 3.4;
+        else if (producto === 'autotal500') tasa = 2.5;
+        else if (producto === 'pesado') tasa = 3.5;
+        document.getElementById('tasaPersonalizada').value = tasa;
+      }
+    }
+
+    function formatoMiles(n) {
+      return n.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,').replace('.', ',');
+    }
+
+    function obtenerNombreProducto(valor) {
+      switch (valor) {
+        case "autotal": return "Autotal 100";
+        case "vagoneta": return "Vagoneta Segura";
+        case "autotal500": return "Autotal 500";
+        case "pesado": return "A. Pesado";
+        default: return "";
+      }
+    }
+
+    function copiarTexto(texto) {
+      navigator.clipboard.writeText(texto).then(() => {
+        const message = document.getElementById('successMessage');
+        message.classList.add('show');
+        setTimeout(() => {
+          message.classList.remove('show');
+        }, 2000);
+      }).catch(err => {
+        alert("No se pudo copiar");
+      });
+    }
+
+    function compartirWhatsApp(texto) {
+      const textoCodificado = encodeURIComponent(texto);
+      window.open(`https://wa.me/?text=${textoCodificado}`, '_blank');
+    }
+
+    function calcular() {
+      const marca = document.getElementById("marca").value.trim();
+      const valorInput = document.getElementById("valor").value;
+      const moneda = document.querySelector('.currency-btn.active').getAttribute('data-value');
+      const esChino = document.querySelector('.radio-option-chino.selected').getAttribute('data-value');
+      const producto = document.querySelector('.product-grid .radio-option.selected').getAttribute('data-value');
+      const resultadoDiv = document.getElementById("resultado");
+
+      if (!marca || !valorInput) {
+        resultadoDiv.innerHTML = `<div class="error"><i class="fas fa-exclamation-circle"></i> ERROR: Complete todos los campos</div>`;
+        resultadoDiv.style.display = 'block';
+        return;
+      }
+
+      let valor = parseFloat(valorInput);
+      if (moneda === 'usd') valor *= 7;
+      const valorBs = valor;
+      const valorUSD = valorBs / 7;
+
+      let tasa = 0.032;
+      if (producto === 'vagoneta') tasa = 0.034;
+      else if (producto === 'autotal500') tasa = 0.025;
+      else if (producto === 'pesado') tasa = 0.035;
+
+      const advanced = document.getElementById('advancedOptions');
+      if (advanced.classList.contains('active')) {
+        const tasaInput = document.getElementById('tasaPersonalizada').value;
+        if (tasaInput) tasa = parseFloat(tasaInput) / 100;
+      }
+
+      let primaContado = valorBs * tasa;
+      if (esChino === 'si') primaContado *= 1.10;
+      if (primaContado < 4200) primaContado = esChino === 'si' ? 4620 : 4200;
+
+      const primaCredito = primaContado * 1.10;
+
+      let cuotas = 6;
+      if (advanced.classList.contains('active')) {
+        cuotas = parseInt(document.querySelector('.cuota-option.selected').getAttribute('data-cuotas'));
+      }
+
+      let cuotaInicial = primaCredito * 0.30;
+      let saldo = primaCredito - cuotaInicial;
+      let cuota = Math.floor((saldo / cuotas) / 5) * 5;
+      cuotaInicial = primaCredito - (cuota * cuotas);
+
+      const textoResultado =
+`*Cotización de Seguro Automotor*
+    
+*Producto:* ${obtenerNombreProducto(producto)}
+*Vehículo:* ${marca}
+*Valor:* Bs ${formatoMiles(valorBs)} ($${formatoMiles(valorUSD)})
+
+*Prima:*
+*• Contado:* Bs ${formatoMiles(primaContado)}
+*• Crédito:* Bs ${formatoMiles(primaCredito)}
+
+*Plan de Pagos:*
+*• Cuota Inicial:* Bs ${formatoMiles(cuotaInicial)}
+*• ${cuotas} Cuotas de:* Bs ${formatoMiles(cuota)}
+
+*Nacional Seguros - Bolivia*`;
+
+      resultadoDiv.innerHTML = `
+        <div class="resultado-header">
+          <h2><i class="fas fa-file-invoice"></i> Cotización</h2>
+          <button class="copy-btn" onclick="copiarTexto(\`${textoResultado}\`)">
+            <i class="fas fa-copy"></i> Copiar
+          </button>
+        </div>
+        <div class="resultado-content">
+          <div class="resultado-item">
+            <strong>Producto:</strong> <span>${obtenerNombreProducto(producto)}</span>
+          </div>
+          <div class="resultado-item">
+            <strong>Vehículo:</strong> <span>${marca}</span>
+          </div>
+          <div class="resultado-item">
+            <strong>Valor comercial:</strong> <span>Bs ${formatoMiles(valorBs)} (${formatoMiles(valorUSD)} USD)</span>
+          </div>
+          <div class="resultado-item strong">
+            <strong>PRIMA</strong>
+          </div>
+          <div class="resultado-item">
+            <strong>Contado:</strong> <span>Bs ${formatoMiles(primaContado)}</span>
+          </div>
+          <div class="resultado-item">
+            <strong>Crédito:</strong> <span>Bs ${formatoMiles(primaCredito)}</span>
+          </div>
+          <div class="resultado-item">
+            <strong>Cuota inicial:</strong> <span>Bs ${formatoMiles(cuotaInicial)}</span>
+          </div>
+          <div class="resultado-item">
+            <strong>${cuotas} cuotas de:</strong> <span>Bs ${formatoMiles(cuota)}</span>
+          </div>
+        </div>
+        <button class="whatsapp-btn" onclick="compartirWhatsApp(\`${textoResultado}\`)">
+          <i class="fab fa-whatsapp"></i> Compartir por WhatsApp
+        </button>
+        <button class="clear-btn" onclick="limpiarFormulario()">
+          <i class="fas fa-trash-alt"></i> Limpiar formulario
+        </button>
+      `;
+      resultadoDiv.style.display = 'block';
+
+      setTimeout(() => {
+        document.querySelector('.container').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 100);
+    }
+
+    function limpiarFormulario() {
+      document.getElementById("marca").value = '';
+      document.getElementById("valor").value = '';
+      document.getElementById("resultado").style.display = 'none';
+      document.getElementById('tasaPersonalizada').value = '3.2';
+
+      document.querySelector('.currency-btn.active').classList.remove('active');
+      document.querySelector('.currency-btn[data-value="usd"]').classList.add('active');
+
+      document.querySelectorAll('.radio-option-chino').forEach(opt => {
+        opt.classList.remove('selected');
+      });
+      document.querySelector('.radio-option-chino[data-value="no"]').classList.add('selected');
+
+      document.querySelectorAll('.product-grid .radio-option').forEach(opt => {
+        opt.classList.remove('selected');
+      });
+      document.querySelector('.product-grid .radio-option[data-value="autotal"]').classList.add('selected');
+
+      document.querySelectorAll('.cuota-option').forEach(opt => {
+        opt.classList.remove('selected');
+      });
+      document.querySelector('.cuota-option[data-cuotas="6"]').classList.add('selected');
+
+      document.getElementById('advancedOptions').classList.remove('active');
+    }
+
+    // Registrar Service Worker
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('sw.js')
+          .then(reg => console.log('SW registrado'))
+          .catch(err => console.log('Error al registrar SW:', err));
+      });
+    }
+  </script>
+</body>
+</html>
