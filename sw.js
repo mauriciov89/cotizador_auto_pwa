@@ -22,3 +22,15 @@ self.addEventListener('fetch', event => {
 self.addEventListener('activate', event => {
   event.waitUntil(self.clients.claim());
 });
+
+self.addEventListener('fetch', (event) => {
+  if (event.request.url.includes('login.html')) {
+    event.respondWith(fetch(event.request)); // No cachear login
+  } else {
+    event.respondWith(
+      caches.match(event.request).then((response) => {
+        return response || fetch(event.request);
+      })
+    );
+  }
+});
