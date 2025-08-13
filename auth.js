@@ -1,3 +1,12 @@
+// auth.js
+document.addEventListener('DOMContentLoaded', () => {
+  if (!firebase.apps.length) {
+    console.error("Firebase no está inicializado");
+    return;
+  }
+  const auth = firebase.auth();
+  // ... resto de tu código
+});
 // Función para registrar usuario
 function registrar(email, password) {
   return auth.createUserWithEmailAndPassword(email, password)
