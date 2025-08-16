@@ -1,0 +1,321 @@
+[debug] [2025-08-15T13:54:36.983Z] ----------------------------------------------------------------------
+[debug] [2025-08-15T13:54:36.985Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\USUARIO\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2025-08-15T13:54:36.986Z] CLI Version:   14.12.1
+[debug] [2025-08-15T13:54:36.986Z] Platform:      win32
+[debug] [2025-08-15T13:54:36.986Z] Node Version:  v22.18.0
+[debug] [2025-08-15T13:54:36.986Z] Time:          Fri Aug 15 2025 09:54:36 GMT-0400 (hora de Bolivia)
+[debug] [2025-08-15T13:54:36.986Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-08-15T13:54:37.157Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-08-15T13:54:37.157Z] > authorizing via signed-in user (mauricio.vil.89@gmail.com)
+[debug] [2025-08-15T13:54:37.158Z] [iam] checking project cot-pwa-mvc for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2025-08-15T13:54:37.158Z] Checked if tokens are valid: true, expires at: 1755267411416
+[debug] [2025-08-15T13:54:37.159Z] Checked if tokens are valid: true, expires at: 1755267411416
+[debug] [2025-08-15T13:54:37.159Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/cot-pwa-mvc:testIamPermissions [none]
+[debug] [2025-08-15T13:54:37.159Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/cot-pwa-mvc:testIamPermissions x-goog-quota-user=projects/cot-pwa-mvc
+[debug] [2025-08-15T13:54:37.159Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/cot-pwa-mvc:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2025-08-15T13:54:45.893Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/cot-pwa-mvc:testIamPermissions 200
+[debug] [2025-08-15T13:54:45.893Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/cot-pwa-mvc:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2025-08-15T13:54:45.893Z] Checked if tokens are valid: true, expires at: 1755267411416
+[debug] [2025-08-15T13:54:45.893Z] Checked if tokens are valid: true, expires at: 1755267411416
+[debug] [2025-08-15T13:54:45.893Z] >>> [apiv2][query] POST https://iam.googleapis.com/v1/projects/cot-pwa-mvc/serviceAccounts/cot-pwa-mvc@appspot.gserviceaccount.com:testIamPermissions [none]
+[debug] [2025-08-15T13:54:45.893Z] >>> [apiv2][body] POST https://iam.googleapis.com/v1/projects/cot-pwa-mvc/serviceAccounts/cot-pwa-mvc@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2025-08-15T13:54:47.633Z] <<< [apiv2][status] POST https://iam.googleapis.com/v1/projects/cot-pwa-mvc/serviceAccounts/cot-pwa-mvc@appspot.gserviceaccount.com:testIamPermissions 200
+[debug] [2025-08-15T13:54:47.633Z] <<< [apiv2][body] POST https://iam.googleapis.com/v1/projects/cot-pwa-mvc/serviceAccounts/cot-pwa-mvc@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2025-08-15T13:54:47.633Z] Checked if tokens are valid: true, expires at: 1755267411416
+[debug] [2025-08-15T13:54:47.634Z] Checked if tokens are valid: true, expires at: 1755267411416
+[debug] [2025-08-15T13:54:47.634Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/cot-pwa-mvc [none]
+[debug] [2025-08-15T13:54:48.634Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/cot-pwa-mvc 200
+[debug] [2025-08-15T13:54:48.635Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/cot-pwa-mvc {"projectId":"cot-pwa-mvc","projectNumber":"702128954131","displayName":"cot-pwa-mvc","name":"projects/cot-pwa-mvc","resources":{"hostingSite":"cot-pwa-mvc"},"state":"ACTIVE","etag":"1_5c721180-5afc-4dd9-acdf-b66250873150"}
+[info] 
+[info] === Deploying to 'cot-pwa-mvc'...
+[info] 
+[info] i  deploying firestore, functions, hosting 
+[info] i  firestore: reading indexes from firestore.indexes.json... 
+[info] i  cloud.firestore: checking firestore.rules for compilation errors... 
+[debug] [2025-08-15T13:54:48.641Z] Checked if tokens are valid: true, expires at: 1755267411416
+[debug] [2025-08-15T13:54:48.641Z] Checked if tokens are valid: true, expires at: 1755267411416
+[debug] [2025-08-15T13:54:48.641Z] >>> [apiv2][query] POST https://firebaserules.googleapis.com/v1/projects/cot-pwa-mvc:test [none]
+[debug] [2025-08-15T13:54:48.641Z] >>> [apiv2][body] POST https://firebaserules.googleapis.com/v1/projects/cot-pwa-mvc:test [omitted]
+[debug] [2025-08-15T13:54:53.215Z] <<< [apiv2][status] POST https://firebaserules.googleapis.com/v1/projects/cot-pwa-mvc:test 200
+[debug] [2025-08-15T13:54:53.215Z] <<< [apiv2][body] POST https://firebaserules.googleapis.com/v1/projects/cot-pwa-mvc:test {}
+[info] +  cloud.firestore: rules file firestore.rules compiled successfully 
+[debug] [2025-08-15T13:54:53.216Z] Checked if tokens are valid: true, expires at: 1755267411416
+[debug] [2025-08-15T13:54:53.216Z] Checked if tokens are valid: true, expires at: 1755267411416
+[debug] [2025-08-15T13:54:53.217Z] >>> [apiv2][query] GET https://cloudresourcemanager.googleapis.com/v1/projects/cot-pwa-mvc [none]
+[debug] [2025-08-15T13:54:54.256Z] <<< [apiv2][status] GET https://cloudresourcemanager.googleapis.com/v1/projects/cot-pwa-mvc 200
+[debug] [2025-08-15T13:54:54.257Z] <<< [apiv2][body] GET https://cloudresourcemanager.googleapis.com/v1/projects/cot-pwa-mvc {"projectNumber":"702128954131","projectId":"cot-pwa-mvc","lifecycleState":"ACTIVE","name":"cot-pwa-mvc","labels":{"firebase":"enabled","firebase-core":"disabled"},"createTime":"2025-08-14T01:48:42.860445Z"}
+[info] i  functions: preparing codebase default for deployment 
+[info] i  functions: ensuring required API cloudfunctions.googleapis.com is enabled... 
+[info] i  functions: ensuring required API cloudbuild.googleapis.com is enabled... 
+[info] i  artifactregistry: ensuring required API artifactregistry.googleapis.com is enabled... 
+[debug] [2025-08-15T13:54:54.259Z] Checked if tokens are valid: true, expires at: 1755267411416
+[debug] [2025-08-15T13:54:54.259Z] Checked if tokens are valid: true, expires at: 1755267411416
+[debug] [2025-08-15T13:54:54.259Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/cot-pwa-mvc/adminSdkConfig [none]
+[debug] [2025-08-15T13:54:55.006Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/cot-pwa-mvc/adminSdkConfig 200
+[debug] [2025-08-15T13:54:55.006Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/cot-pwa-mvc/adminSdkConfig {"projectId":"cot-pwa-mvc","storageBucket":"cot-pwa-mvc.firebasestorage.app"}
+[debug] [2025-08-15T13:54:55.006Z] Checked if tokens are valid: true, expires at: 1755267411416
+[debug] [2025-08-15T13:54:55.006Z] Checked if tokens are valid: true, expires at: 1755267411416
+[debug] [2025-08-15T13:54:55.006Z] >>> [apiv2][query] GET https://runtimeconfig.googleapis.com/v1beta1/projects/cot-pwa-mvc/configs [none]
+[debug] [2025-08-15T13:54:57.339Z] <<< [apiv2][status] GET https://runtimeconfig.googleapis.com/v1beta1/projects/cot-pwa-mvc/configs 200
+[debug] [2025-08-15T13:54:57.339Z] <<< [apiv2][body] GET https://runtimeconfig.googleapis.com/v1beta1/projects/cot-pwa-mvc/configs {}
+[debug] [2025-08-15T13:54:57.340Z] Validating nodejs source
+[debug] [2025-08-15T13:55:01.567Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "22"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "firebase-admin": "^12.6.0",
+    "firebase-functions": "^6.0.1"
+  },
+  "devDependencies": {
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}
+[debug] [2025-08-15T13:55:01.567Z] Building nodejs source
+[info] i  functions: Loading and analyzing source code for codebase default to determine what to deploy 
+[debug] [2025-08-15T13:55:01.568Z] Could not find functions.yaml. Must use http discovery
+[debug] [2025-08-15T13:55:01.574Z] Found firebase-functions binary at 'C:\Users\USUARIO\OneDrive\Documentos\cotizador con autentificacion\functions\node_modules\.bin\firebase-functions'
+[info] Serving at port 8411
+
+[debug] [2025-08-15T13:55:02.149Z] Got response from /__/functions.yaml {"endpoints":{},"specVersion":"v1alpha1","requiredAPIs":[],"extensions":{}}
+[info] i  extensions: ensuring required API firebaseextensions.googleapis.com is enabled... 
+[debug] [2025-08-15T13:55:06.178Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-08-15T13:55:06.178Z] > authorizing via signed-in user (mauricio.vil.89@gmail.com)
+[debug] [2025-08-15T13:55:06.178Z] [iam] checking project cot-pwa-mvc for permissions ["firebase.projects.get","firebaseextensions.instances.list"]
+[debug] [2025-08-15T13:55:06.178Z] Checked if tokens are valid: true, expires at: 1755267411416
+[debug] [2025-08-15T13:55:06.178Z] Checked if tokens are valid: true, expires at: 1755267411416
+[debug] [2025-08-15T13:55:06.178Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/cot-pwa-mvc:testIamPermissions [none]
+[debug] [2025-08-15T13:55:06.178Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/cot-pwa-mvc:testIamPermissions x-goog-quota-user=projects/cot-pwa-mvc
+[debug] [2025-08-15T13:55:06.178Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/cot-pwa-mvc:testIamPermissions {"permissions":["firebase.projects.get","firebaseextensions.instances.list"]}
+[debug] [2025-08-15T13:55:09.346Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/cot-pwa-mvc:testIamPermissions 200
+[debug] [2025-08-15T13:55:09.346Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/cot-pwa-mvc:testIamPermissions {"permissions":["firebase.projects.get","firebaseextensions.instances.list"]}
+[debug] [2025-08-15T13:55:09.346Z] Checked if tokens are valid: true, expires at: 1755267411416
+[debug] [2025-08-15T13:55:09.346Z] Checked if tokens are valid: true, expires at: 1755267411416
+[debug] [2025-08-15T13:55:09.346Z] >>> [apiv2][query] GET https://firebaseextensions.googleapis.com/v1beta/projects/cot-pwa-mvc/instances pageSize=100&pageToken=
+[debug] [2025-08-15T13:55:13.950Z] <<< [apiv2][status] GET https://firebaseextensions.googleapis.com/v1beta/projects/cot-pwa-mvc/instances 200
+[debug] [2025-08-15T13:55:13.950Z] <<< [apiv2][body] GET https://firebaseextensions.googleapis.com/v1beta/projects/cot-pwa-mvc/instances {}
+[debug] [2025-08-15T13:55:13.951Z] Checked if tokens are valid: true, expires at: 1755267411416
+[debug] [2025-08-15T13:55:13.951Z] Checked if tokens are valid: true, expires at: 1755267411416
+[debug] [2025-08-15T13:55:13.952Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/projects/cot-pwa-mvc/locations/-/functions [none]
+[debug] [2025-08-15T13:55:16.684Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/projects/cot-pwa-mvc/locations/-/functions 200
+[debug] [2025-08-15T13:55:16.684Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/projects/cot-pwa-mvc/locations/-/functions {}
+[debug] [2025-08-15T13:55:16.684Z] Checked if tokens are valid: true, expires at: 1755267411416
+[debug] [2025-08-15T13:55:16.684Z] Checked if tokens are valid: true, expires at: 1755267411416
+[debug] [2025-08-15T13:55:16.685Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/cot-pwa-mvc/locations/-/functions filter=environment%3D%22GEN_2%22
+[debug] [2025-08-15T13:55:18.038Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/cot-pwa-mvc/locations/-/functions 200
+[debug] [2025-08-15T13:55:18.038Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/cot-pwa-mvc/locations/-/functions {}
+[debug] [2025-08-15T13:55:18.042Z] Checked if tokens are valid: true, expires at: 1755267411416
+[debug] [2025-08-15T13:55:18.042Z] Checked if tokens are valid: true, expires at: 1755267411416
+[debug] [2025-08-15T13:55:18.042Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/cot-pwa-mvc/versions [none]
+[debug] [2025-08-15T13:55:18.042Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/cot-pwa-mvc/versions {"status":"CREATED","labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2025-08-15T13:55:23.211Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/cot-pwa-mvc/versions 200
+[debug] [2025-08-15T13:55:23.211Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/cot-pwa-mvc/versions {"name":"projects/702128954131/sites/cot-pwa-mvc/versions/7471f271a328bae7","status":"CREATED","config":{},"labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2025-08-15T13:55:23.212Z] Checked if tokens are valid: true, expires at: 1755267411416
+[debug] [2025-08-15T13:55:23.212Z] Checked if tokens are valid: true, expires at: 1755267411416
+[debug] [2025-08-15T13:55:23.212Z] >>> [apiv2][query] GET https://firestore.googleapis.com/v1/projects/cot-pwa-mvc/databases/(default) [none]
+[debug] [2025-08-15T13:55:25.876Z] <<< [apiv2][status] GET https://firestore.googleapis.com/v1/projects/cot-pwa-mvc/databases/(default) 200
+[debug] [2025-08-15T13:55:25.876Z] <<< [apiv2][body] GET https://firestore.googleapis.com/v1/projects/cot-pwa-mvc/databases/(default) {"name":"projects/cot-pwa-mvc/databases/(default)","uid":"0942503e-a10f-442d-97c3-1468bd000f0e","createTime":"2025-08-14T02:15:56.910762Z","updateTime":"2025-08-14T02:15:56.910762Z","locationId":"nam5","type":"FIRESTORE_NATIVE","concurrencyMode":"PESSIMISTIC","versionRetentionPeriod":"3600s","earliestVersionTime":"2025-08-15T12:55:25.138850Z","appEngineIntegrationMode":"DISABLED","keyPrefix":"s","pointInTimeRecoveryEnablement":"POINT_IN_TIME_RECOVERY_DISABLED","deleteProtectionState":"DELETE_PROTECTION_DISABLED","databaseEdition":"STANDARD","freeTier":true,"etag":"IJmSgO/7jI8DMNGIppLai48D"}
+[debug] [2025-08-15T13:55:25.878Z] Checked if tokens are valid: true, expires at: 1755267411416
+[debug] [2025-08-15T13:55:25.878Z] Checked if tokens are valid: true, expires at: 1755267411416
+[debug] [2025-08-15T13:55:25.879Z] >>> [apiv2][query] GET https://firebaserules.googleapis.com/v1/projects/cot-pwa-mvc/releases pageSize=10&pageToken=
+[debug] [2025-08-15T13:55:28.181Z] <<< [apiv2][status] GET https://firebaserules.googleapis.com/v1/projects/cot-pwa-mvc/releases 200
+[debug] [2025-08-15T13:55:28.181Z] <<< [apiv2][body] GET https://firebaserules.googleapis.com/v1/projects/cot-pwa-mvc/releases {"releases":[{"name":"projects/cot-pwa-mvc/releases/cloud.firestore","rulesetName":"projects/cot-pwa-mvc/rulesets/b6fd90dc-6dbb-42f3-b0f0-33e760e79a0e","createTime":"2025-08-14T02:16:11.320356Z","updateTime":"2025-08-15T13:17:24.414802Z"}]}
+[debug] [2025-08-15T13:55:28.182Z] Checked if tokens are valid: true, expires at: 1755267411416
+[debug] [2025-08-15T13:55:28.183Z] Checked if tokens are valid: true, expires at: 1755267411416
+[debug] [2025-08-15T13:55:28.183Z] >>> [apiv2][query] GET https://firebaserules.googleapis.com/v1/projects/cot-pwa-mvc/rulesets/b6fd90dc-6dbb-42f3-b0f0-33e760e79a0e [none]
+[debug] [2025-08-15T13:55:32.533Z] <<< [apiv2][status] GET https://firebaserules.googleapis.com/v1/projects/cot-pwa-mvc/rulesets/b6fd90dc-6dbb-42f3-b0f0-33e760e79a0e 200
+[debug] [2025-08-15T13:55:32.533Z] <<< [apiv2][body] GET https://firebaserules.googleapis.com/v1/projects/cot-pwa-mvc/rulesets/b6fd90dc-6dbb-42f3-b0f0-33e760e79a0e [omitted]
+[info] i  firestore: latest version of firestore.rules already up to date, skipping upload... 
+[info] i  firestore: deploying indexes... 
+[debug] [2025-08-15T13:55:32.537Z] Checked if tokens are valid: true, expires at: 1755267411416
+[debug] [2025-08-15T13:55:32.537Z] Checked if tokens are valid: true, expires at: 1755267411416
+[debug] [2025-08-15T13:55:32.537Z] >>> [apiv2][query] GET https://firestore.googleapis.com/v1/projects/cot-pwa-mvc/databases/(default)/collectionGroups/-/indexes [none]
+[debug] [2025-08-15T13:55:34.373Z] <<< [apiv2][status] GET https://firestore.googleapis.com/v1/projects/cot-pwa-mvc/databases/(default)/collectionGroups/-/indexes 200
+[debug] [2025-08-15T13:55:34.373Z] <<< [apiv2][body] GET https://firestore.googleapis.com/v1/projects/cot-pwa-mvc/databases/(default)/collectionGroups/-/indexes {}
+[debug] [2025-08-15T13:55:34.374Z] Checked if tokens are valid: true, expires at: 1755267411416
+[debug] [2025-08-15T13:55:34.374Z] Checked if tokens are valid: true, expires at: 1755267411416
+[debug] [2025-08-15T13:55:34.374Z] >>> [apiv2][query] GET https://firestore.googleapis.com/v1/projects/cot-pwa-mvc/databases/(default)/collectionGroups/-/fields?filter=indexConfig.usesAncestorConfig=false OR ttlConfig:* [none]
+[debug] [2025-08-15T13:55:34.652Z] <<< [apiv2][status] GET https://firestore.googleapis.com/v1/projects/cot-pwa-mvc/databases/(default)/collectionGroups/-/fields?filter=indexConfig.usesAncestorConfig=false OR ttlConfig:* 200
+[debug] [2025-08-15T13:55:34.652Z] <<< [apiv2][body] GET https://firestore.googleapis.com/v1/projects/cot-pwa-mvc/databases/(default)/collectionGroups/-/fields?filter=indexConfig.usesAncestorConfig=false OR ttlConfig:* {"fields":[{"name":"projects/cot-pwa-mvc/databases/(default)/collectionGroups/__default__/fields/*","indexConfig":{"indexes":[{"queryScope":"COLLECTION","fields":[{"fieldPath":"*","order":"ASCENDING"}],"state":"READY"},{"queryScope":"COLLECTION","fields":[{"fieldPath":"*","order":"DESCENDING"}],"state":"READY"},{"queryScope":"COLLECTION","fields":[{"fieldPath":"*","arrayConfig":"CONTAINS"}],"state":"READY"}]}}]}
+[info] +  firestore: deployed indexes in firestore.indexes.json successfully for (default) database 
+[debug] [2025-08-15T13:55:34.653Z] Checked if tokens are valid: true, expires at: 1755267411416
+[debug] [2025-08-15T13:55:34.653Z] Checked if tokens are valid: true, expires at: 1755267411416
+[debug] [2025-08-15T13:55:34.653Z] >>> [apiv2][query] GET https://cloudbilling.googleapis.com/v1/projects/cot-pwa-mvc/billingInfo [none]
+[debug] [2025-08-15T13:55:36.318Z] <<< [apiv2][status] GET https://cloudbilling.googleapis.com/v1/projects/cot-pwa-mvc/billingInfo 200
+[debug] [2025-08-15T13:55:36.318Z] <<< [apiv2][body] GET https://cloudbilling.googleapis.com/v1/projects/cot-pwa-mvc/billingInfo {"name":"projects/cot-pwa-mvc/billingInfo","projectId":"cot-pwa-mvc","billingAccountName":"billingAccounts/011F54-46F621-817752","billingEnabled":true}
+[info] i  hosting[cot-pwa-mvc]: beginning deploy... 
+[info] i  hosting[cot-pwa-mvc]: found 8 files in public 
+[debug] [2025-08-15T13:55:36.333Z] [hosting] uploading with 200 concurrency
+[debug] [2025-08-15T13:55:36.347Z] Checked if tokens are valid: true, expires at: 1755267411416
+[debug] [2025-08-15T13:55:36.347Z] Checked if tokens are valid: true, expires at: 1755267411416
+[debug] [2025-08-15T13:55:36.348Z] [hosting] hash cache [cHVibGlj] stored for 8 files
+[debug] [2025-08-15T13:55:36.349Z] [hosting][hash queue][FINAL] {"max":11,"min":2,"avg":4.625,"active":0,"complete":8,"success":8,"errored":0,"retried":0,"total":8,"elapsed":14}
+[debug] [2025-08-15T13:55:36.349Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/702128954131/sites/cot-pwa-mvc/versions/7471f271a328bae7:populateFiles [none]
+[debug] [2025-08-15T13:55:36.349Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/702128954131/sites/cot-pwa-mvc/versions/7471f271a328bae7:populateFiles {"files":{"/firebase-config.js":"68a6a9609dec0da8ffb3a77d878df48f73b1e06ffcc20e31b5921bb7cb32b06b","/auth.js":"48e659a3819736bc698c83875ff6671a2f058338a8650d0c11ff0a3a728b48f5","/login.html":"cb498f488c90ca6e20424c1f072457acfab147a317ece1ff49992a774bf7e586","/manifest.json":"f1f974128f6637a138b24340514f20c9f77243b2a4aa629692bc4e97297a03b5","/sw.js":"f0849e8575f7915a3286e0b7e61923c0a7a0e0173dd275633ae54a09f5fd4e51","/index.html":"a2ca9399601f894c42d947860e27586b26e2d14b6f2928ad831fc2775e612150","/icon-192.png":"90aa0dcd3c58757bf4632b5e7746f608cc90e0246bf754e49f64b54d36ac2fd8","/icon-512.png":"8c2addf83ffc9cf160239a54146615bae4ac16a0cb33fa3f9a27906640ea6275"}}
+[debug] [2025-08-15T13:55:38.786Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/702128954131/sites/cot-pwa-mvc/versions/7471f271a328bae7:populateFiles 200
+[debug] [2025-08-15T13:55:38.787Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/702128954131/sites/cot-pwa-mvc/versions/7471f271a328bae7:populateFiles {"uploadRequiredHashes":["f0849e8575f7915a3286e0b7e61923c0a7a0e0173dd275633ae54a09f5fd4e51","cb498f488c90ca6e20424c1f072457acfab147a317ece1ff49992a774bf7e586","f1f974128f6637a138b24340514f20c9f77243b2a4aa629692bc4e97297a03b5","a2ca9399601f894c42d947860e27586b26e2d14b6f2928ad831fc2775e612150","90aa0dcd3c58757bf4632b5e7746f608cc90e0246bf754e49f64b54d36ac2fd8","8c2addf83ffc9cf160239a54146615bae4ac16a0cb33fa3f9a27906640ea6275","68a6a9609dec0da8ffb3a77d878df48f73b1e06ffcc20e31b5921bb7cb32b06b","48e659a3819736bc698c83875ff6671a2f058338a8650d0c11ff0a3a728b48f5"],"uploadUrl":"https://upload-firebasehosting.googleapis.com/upload/sites/cot-pwa-mvc/versions/7471f271a328bae7/files"}
+[debug] [2025-08-15T13:55:38.789Z] Checked if tokens are valid: true, expires at: 1755267411416
+[debug] [2025-08-15T13:55:38.789Z] Checked if tokens are valid: true, expires at: 1755267411416
+[debug] [2025-08-15T13:55:38.790Z] Checked if tokens are valid: true, expires at: 1755267411416
+[debug] [2025-08-15T13:55:38.790Z] Checked if tokens are valid: true, expires at: 1755267411416
+[debug] [2025-08-15T13:55:38.791Z] Checked if tokens are valid: true, expires at: 1755267411416
+[debug] [2025-08-15T13:55:38.791Z] Checked if tokens are valid: true, expires at: 1755267411416
+[debug] [2025-08-15T13:55:38.791Z] Checked if tokens are valid: true, expires at: 1755267411416
+[debug] [2025-08-15T13:55:38.792Z] Checked if tokens are valid: true, expires at: 1755267411416
+[debug] [2025-08-15T13:55:38.792Z] Checked if tokens are valid: true, expires at: 1755267411416
+[debug] [2025-08-15T13:55:38.792Z] Checked if tokens are valid: true, expires at: 1755267411416
+[debug] [2025-08-15T13:55:38.793Z] Checked if tokens are valid: true, expires at: 1755267411416
+[debug] [2025-08-15T13:55:38.793Z] Checked if tokens are valid: true, expires at: 1755267411416
+[debug] [2025-08-15T13:55:38.793Z] Checked if tokens are valid: true, expires at: 1755267411416
+[debug] [2025-08-15T13:55:38.793Z] Checked if tokens are valid: true, expires at: 1755267411416
+[debug] [2025-08-15T13:55:38.793Z] Checked if tokens are valid: true, expires at: 1755267411416
+[debug] [2025-08-15T13:55:38.793Z] Checked if tokens are valid: true, expires at: 1755267411416
+[debug] [2025-08-15T13:55:38.794Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/cot-pwa-mvc/versions/7471f271a328bae7/files/f0849e8575f7915a3286e0b7e61923c0a7a0e0173dd275633ae54a09f5fd4e51 [none]
+[debug] [2025-08-15T13:55:38.794Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/cot-pwa-mvc/versions/7471f271a328bae7/files/f0849e8575f7915a3286e0b7e61923c0a7a0e0173dd275633ae54a09f5fd4e51 [stream]
+[debug] [2025-08-15T13:55:38.798Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/cot-pwa-mvc/versions/7471f271a328bae7/files/cb498f488c90ca6e20424c1f072457acfab147a317ece1ff49992a774bf7e586 [none]
+[debug] [2025-08-15T13:55:38.798Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/cot-pwa-mvc/versions/7471f271a328bae7/files/cb498f488c90ca6e20424c1f072457acfab147a317ece1ff49992a774bf7e586 [stream]
+[debug] [2025-08-15T13:55:38.802Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/cot-pwa-mvc/versions/7471f271a328bae7/files/f1f974128f6637a138b24340514f20c9f77243b2a4aa629692bc4e97297a03b5 [none]
+[debug] [2025-08-15T13:55:38.803Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/cot-pwa-mvc/versions/7471f271a328bae7/files/f1f974128f6637a138b24340514f20c9f77243b2a4aa629692bc4e97297a03b5 [stream]
+[debug] [2025-08-15T13:55:38.805Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/cot-pwa-mvc/versions/7471f271a328bae7/files/a2ca9399601f894c42d947860e27586b26e2d14b6f2928ad831fc2775e612150 [none]
+[debug] [2025-08-15T13:55:38.806Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/cot-pwa-mvc/versions/7471f271a328bae7/files/a2ca9399601f894c42d947860e27586b26e2d14b6f2928ad831fc2775e612150 [stream]
+[debug] [2025-08-15T13:55:38.808Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/cot-pwa-mvc/versions/7471f271a328bae7/files/90aa0dcd3c58757bf4632b5e7746f608cc90e0246bf754e49f64b54d36ac2fd8 [none]
+[debug] [2025-08-15T13:55:38.808Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/cot-pwa-mvc/versions/7471f271a328bae7/files/90aa0dcd3c58757bf4632b5e7746f608cc90e0246bf754e49f64b54d36ac2fd8 [stream]
+[debug] [2025-08-15T13:55:38.810Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/cot-pwa-mvc/versions/7471f271a328bae7/files/8c2addf83ffc9cf160239a54146615bae4ac16a0cb33fa3f9a27906640ea6275 [none]
+[debug] [2025-08-15T13:55:38.810Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/cot-pwa-mvc/versions/7471f271a328bae7/files/8c2addf83ffc9cf160239a54146615bae4ac16a0cb33fa3f9a27906640ea6275 [stream]
+[debug] [2025-08-15T13:55:38.812Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/cot-pwa-mvc/versions/7471f271a328bae7/files/68a6a9609dec0da8ffb3a77d878df48f73b1e06ffcc20e31b5921bb7cb32b06b [none]
+[debug] [2025-08-15T13:55:38.812Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/cot-pwa-mvc/versions/7471f271a328bae7/files/68a6a9609dec0da8ffb3a77d878df48f73b1e06ffcc20e31b5921bb7cb32b06b [stream]
+[debug] [2025-08-15T13:55:38.814Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/cot-pwa-mvc/versions/7471f271a328bae7/files/48e659a3819736bc698c83875ff6671a2f058338a8650d0c11ff0a3a728b48f5 [none]
+[debug] [2025-08-15T13:55:38.814Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/cot-pwa-mvc/versions/7471f271a328bae7/files/48e659a3819736bc698c83875ff6671a2f058338a8650d0c11ff0a3a728b48f5 [stream]
+[debug] [2025-08-15T13:55:38.815Z] [hosting][populate queue][FINAL] {"max":2447,"min":2447,"avg":2447,"active":0,"complete":1,"success":1,"errored":0,"retried":0,"total":1,"elapsed":2468}
+[debug] [2025-08-15T13:55:38.815Z] [hosting] uploads queued: 8
+[debug] [2025-08-15T13:55:42.229Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/cot-pwa-mvc/versions/7471f271a328bae7/files/f0849e8575f7915a3286e0b7e61923c0a7a0e0173dd275633ae54a09f5fd4e51 200
+[debug] [2025-08-15T13:55:42.229Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/cot-pwa-mvc/versions/7471f271a328bae7/files/f0849e8575f7915a3286e0b7e61923c0a7a0e0173dd275633ae54a09f5fd4e51 [stream]
+[debug] [2025-08-15T13:55:42.419Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/cot-pwa-mvc/versions/7471f271a328bae7/files/cb498f488c90ca6e20424c1f072457acfab147a317ece1ff49992a774bf7e586 200
+[debug] [2025-08-15T13:55:42.420Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/cot-pwa-mvc/versions/7471f271a328bae7/files/cb498f488c90ca6e20424c1f072457acfab147a317ece1ff49992a774bf7e586 [stream]
+[debug] [2025-08-15T13:55:43.490Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/cot-pwa-mvc/versions/7471f271a328bae7/files/48e659a3819736bc698c83875ff6671a2f058338a8650d0c11ff0a3a728b48f5 200
+[debug] [2025-08-15T13:55:43.491Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/cot-pwa-mvc/versions/7471f271a328bae7/files/48e659a3819736bc698c83875ff6671a2f058338a8650d0c11ff0a3a728b48f5 [stream]
+[debug] [2025-08-15T13:55:43.765Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/cot-pwa-mvc/versions/7471f271a328bae7/files/68a6a9609dec0da8ffb3a77d878df48f73b1e06ffcc20e31b5921bb7cb32b06b 200
+[debug] [2025-08-15T13:55:43.766Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/cot-pwa-mvc/versions/7471f271a328bae7/files/68a6a9609dec0da8ffb3a77d878df48f73b1e06ffcc20e31b5921bb7cb32b06b [stream]
+[debug] [2025-08-15T13:55:45.124Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/cot-pwa-mvc/versions/7471f271a328bae7/files/f1f974128f6637a138b24340514f20c9f77243b2a4aa629692bc4e97297a03b5 200
+[debug] [2025-08-15T13:55:45.124Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/cot-pwa-mvc/versions/7471f271a328bae7/files/f1f974128f6637a138b24340514f20c9f77243b2a4aa629692bc4e97297a03b5 [stream]
+[debug] [2025-08-15T13:55:46.808Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/cot-pwa-mvc/versions/7471f271a328bae7/files/a2ca9399601f894c42d947860e27586b26e2d14b6f2928ad831fc2775e612150 200
+[debug] [2025-08-15T13:55:46.808Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/cot-pwa-mvc/versions/7471f271a328bae7/files/a2ca9399601f894c42d947860e27586b26e2d14b6f2928ad831fc2775e612150 [stream]
+[debug] [2025-08-15T13:55:52.116Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/cot-pwa-mvc/versions/7471f271a328bae7/files/90aa0dcd3c58757bf4632b5e7746f608cc90e0246bf754e49f64b54d36ac2fd8 200
+[debug] [2025-08-15T13:55:52.116Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/cot-pwa-mvc/versions/7471f271a328bae7/files/90aa0dcd3c58757bf4632b5e7746f608cc90e0246bf754e49f64b54d36ac2fd8 [stream]
+[debug] [2025-08-15T13:56:08.212Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/cot-pwa-mvc/versions/7471f271a328bae7/files/8c2addf83ffc9cf160239a54146615bae4ac16a0cb33fa3f9a27906640ea6275 200
+[debug] [2025-08-15T13:56:08.212Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/cot-pwa-mvc/versions/7471f271a328bae7/files/8c2addf83ffc9cf160239a54146615bae4ac16a0cb33fa3f9a27906640ea6275 [stream]
+[debug] [2025-08-15T13:56:08.212Z] [hosting][upload queue][FINAL] {"max":29420,"min":3442,"avg":9230,"active":0,"complete":8,"success":8,"errored":0,"retried":0,"total":8,"elapsed":29425}
+[info] +  hosting[cot-pwa-mvc]: file upload complete 
+[debug] [2025-08-15T13:56:08.215Z] [hosting] deploy completed after 31891ms
+[debug] [2025-08-15T13:56:08.216Z] [rules] releasing cloud.firestore/(default) with ruleset projects/cot-pwa-mvc/rulesets/b6fd90dc-6dbb-42f3-b0f0-33e760e79a0e
+[debug] [2025-08-15T13:56:08.217Z] Checked if tokens are valid: true, expires at: 1755267411416
+[debug] [2025-08-15T13:56:08.217Z] Checked if tokens are valid: true, expires at: 1755267411416
+[debug] [2025-08-15T13:56:08.217Z] >>> [apiv2][query] PATCH https://firebaserules.googleapis.com/v1/projects/cot-pwa-mvc/releases/cloud.firestore/(default) [none]
+[debug] [2025-08-15T13:56:08.217Z] >>> [apiv2][body] PATCH https://firebaserules.googleapis.com/v1/projects/cot-pwa-mvc/releases/cloud.firestore/(default) {"release":{"name":"projects/cot-pwa-mvc/releases/cloud.firestore/(default)","rulesetName":"projects/cot-pwa-mvc/rulesets/b6fd90dc-6dbb-42f3-b0f0-33e760e79a0e"}}
+[debug] [2025-08-15T13:56:10.299Z] <<< [apiv2][status] PATCH https://firebaserules.googleapis.com/v1/projects/cot-pwa-mvc/releases/cloud.firestore/(default) 200
+[debug] [2025-08-15T13:56:10.299Z] <<< [apiv2][body] PATCH https://firebaserules.googleapis.com/v1/projects/cot-pwa-mvc/releases/cloud.firestore/(default) {"name":"projects/cot-pwa-mvc/releases/cloud.firestore","rulesetName":"projects/cot-pwa-mvc/rulesets/b6fd90dc-6dbb-42f3-b0f0-33e760e79a0e","createTime":"2025-08-14T02:16:11.320356Z","updateTime":"2025-08-15T13:56:09.779076Z"}
+[debug] [2025-08-15T13:56:10.299Z] [rules] updated release projects/cot-pwa-mvc/releases/cloud.firestore
+[info] +  firestore: released rules firestore.rules to cloud.firestore 
+[debug] [2025-08-15T13:56:10.306Z] Total Function Deployment time: 0
+[debug] [2025-08-15T13:56:10.306Z] 0 Functions Deployed
+[debug] [2025-08-15T13:56:10.306Z] 0 Functions Errored
+[debug] [2025-08-15T13:56:10.306Z] 0 Function Deployments Aborted
+[debug] [2025-08-15T13:56:10.306Z] Average Function Deployment time: NaN
+[debug] [2025-08-15T13:56:10.809Z] [
+  {
+    "config": {
+      "public": "public",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "trailingSlash": false,
+      "rewrites": [
+        {
+          "source": "**/*",
+          "destination": "/index.html"
+        }
+      ],
+      "site": "cot-pwa-mvc"
+    },
+    "version": "projects/702128954131/sites/cot-pwa-mvc/versions/7471f271a328bae7"
+  }
+]
+[info] i  hosting[cot-pwa-mvc]: finalizing version... 
+[debug] [2025-08-15T13:56:10.813Z] Checked if tokens are valid: true, expires at: 1755267411416
+[debug] [2025-08-15T13:56:10.813Z] Checked if tokens are valid: true, expires at: 1755267411416
+[debug] [2025-08-15T13:56:10.814Z] >>> [apiv2][query] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/cot-pwa-mvc/versions/7471f271a328bae7 updateMask=status%2Cconfig
+[debug] [2025-08-15T13:56:10.814Z] >>> [apiv2][body] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/cot-pwa-mvc/versions/7471f271a328bae7 {"status":"FINALIZED","config":{"rewrites":[{"glob":"**/*","path":"/index.html"}],"trailingSlashBehavior":"REMOVE"}}
+[debug] [2025-08-15T13:56:16.545Z] <<< [apiv2][status] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/cot-pwa-mvc/versions/7471f271a328bae7 200
+[debug] [2025-08-15T13:56:16.545Z] <<< [apiv2][body] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/cot-pwa-mvc/versions/7471f271a328bae7 {"name":"projects/702128954131/sites/cot-pwa-mvc/versions/7471f271a328bae7","status":"FINALIZED","config":{"rewrites":[{"glob":"**/*","path":"/index.html"}],"trailingSlashBehavior":"REMOVE"},"labels":{"deployment-tool":"cli-firebase"},"createTime":"2025-08-15T13:55:23.372737Z","createUser":{"email":"mauricio.vil.89@gmail.com"},"finalizeTime":"2025-08-15T13:56:12.899892Z","finalizeUser":{"email":"mauricio.vil.89@gmail.com"}}
+[debug] [2025-08-15T13:56:16.546Z] [hosting] finalized version for cot-pwa-mvc:[object Object]
+[info] +  hosting[cot-pwa-mvc]: version finalized 
+[info] i  hosting[cot-pwa-mvc]: releasing new version... 
+[debug] [2025-08-15T13:56:16.546Z] Checked if tokens are valid: true, expires at: 1755267411416
+[debug] [2025-08-15T13:56:16.546Z] Checked if tokens are valid: true, expires at: 1755267411416
+[debug] [2025-08-15T13:56:16.546Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/cot-pwa-mvc/channels/live/releases versionName=projects%2F702128954131%2Fsites%2Fcot-pwa-mvc%2Fversions%2F7471f271a328bae7
+[debug] [2025-08-15T13:56:16.546Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/cot-pwa-mvc/channels/live/releases {}
+[debug] [2025-08-15T13:56:21.079Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/cot-pwa-mvc/channels/live/releases 200
+[debug] [2025-08-15T13:56:21.079Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/cot-pwa-mvc/channels/live/releases {"name":"projects/702128954131/sites/cot-pwa-mvc/channels/live/releases/1755266176730000","version":{"name":"projects/702128954131/sites/cot-pwa-mvc/versions/7471f271a328bae7","status":"FINALIZED","config":{"rewrites":[{"glob":"**/*","path":"/index.html"}],"trailingSlashBehavior":"REMOVE"},"labels":{"deployment-tool":"cli-firebase"},"createTime":"2025-08-15T13:55:23.372737Z","createUser":{"email":"mauricio.vil.89@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ACg8ocKdL_RDOj2Ebk23PlcQhOi0zpLS1NPvYWxv9wAQPetuAGTsTcXlXQ"},"finalizeTime":"2025-08-15T13:56:12.899892Z","finalizeUser":{"email":"mauricio.vil.89@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ACg8ocKdL_RDOj2Ebk23PlcQhOi0zpLS1NPvYWxv9wAQPetuAGTsTcXlXQ"}},"type":"DEPLOY","releaseTime":"2025-08-15T13:56:16.730Z","releaseUser":{"email":"mauricio.vil.89@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ACg8ocKdL_RDOj2Ebk23PlcQhOi0zpLS1NPvYWxv9wAQPetuAGTsTcXlXQ"}}
+[debug] [2025-08-15T13:56:21.079Z] [hosting] release: {"name":"projects/702128954131/sites/cot-pwa-mvc/channels/live/releases/1755266176730000","version":{"name":"projects/702128954131/sites/cot-pwa-mvc/versions/7471f271a328bae7","status":"FINALIZED","config":{"rewrites":[{"glob":"**/*","path":"/index.html"}],"trailingSlashBehavior":"REMOVE"},"labels":{"deployment-tool":"cli-firebase"},"createTime":"2025-08-15T13:55:23.372737Z","createUser":{"email":"mauricio.vil.89@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ACg8ocKdL_RDOj2Ebk23PlcQhOi0zpLS1NPvYWxv9wAQPetuAGTsTcXlXQ"},"finalizeTime":"2025-08-15T13:56:12.899892Z","finalizeUser":{"email":"mauricio.vil.89@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ACg8ocKdL_RDOj2Ebk23PlcQhOi0zpLS1NPvYWxv9wAQPetuAGTsTcXlXQ"}},"type":"DEPLOY","releaseTime":"2025-08-15T13:56:16.730Z","releaseUser":{"email":"mauricio.vil.89@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ACg8ocKdL_RDOj2Ebk23PlcQhOi0zpLS1NPvYWxv9wAQPetuAGTsTcXlXQ"}}
+[info] +  hosting[cot-pwa-mvc]: release complete 
+[info] 
+[info] +  Deploy complete! 
+[info] 
+[info] Project Console: https://console.firebase.google.com/project/cot-pwa-mvc/overview
+[info] Hosting URL: https://cot-pwa-mvc.web.app
+[debug] [2025-08-15T13:56:31.954Z] Error: Timed out.
+    at Timeout._onTimeout (C:\Users\USUARIO\AppData\Roaming\npm\node_modules\firebase-tools\lib\utils.js:273:49)
+    at listOnTimeout (node:internal/timers:588:17)
+    at process.processTimers (node:internal/timers:523:7)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2025-08-15T14:24:31.979Z] ----------------------------------------------------------------------
+[debug] [2025-08-15T14:24:31.981Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\USUARIO\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2025-08-15T14:24:31.981Z] CLI Version:   14.12.1
+[debug] [2025-08-15T14:24:31.981Z] Platform:      win32
+[debug] [2025-08-15T14:24:31.982Z] Node Version:  v22.18.0
+[debug] [2025-08-15T14:24:31.982Z] Time:          Fri Aug 15 2025 10:24:31 GMT-0400 (hora de Bolivia)
+[debug] [2025-08-15T14:24:31.982Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-08-15T14:24:32.135Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-08-15T14:24:32.135Z] > authorizing via signed-in user (mauricio.vil.89@gmail.com)
+[debug] [2025-08-15T14:24:32.136Z] [iam] checking project cot-pwa-mvc for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2025-08-15T14:24:32.136Z] Checked if tokens are valid: false, expires at: 1755267411416
+[debug] [2025-08-15T14:24:32.137Z] Checked if tokens are valid: false, expires at: 1755267411416
+[debug] [2025-08-15T14:24:32.137Z] > refreshing access token with scopes: []
+[debug] [2025-08-15T14:24:32.138Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2025-08-15T14:24:32.138Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-08-15T14:24:33.910Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2025-08-15T14:24:33.910Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-08-15T14:24:33.916Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/cot-pwa-mvc:testIamPermissions [none]
+[debug] [2025-08-15T14:24:33.917Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/cot-pwa-mvc:testIamPermissions x-goog-quota-user=projects/cot-pwa-mvc
+[debug] [2025-08-15T14:24:33.917Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/cot-pwa-mvc:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2025-08-15T14:24:38.119Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/cot-pwa-mvc:testIamPermissions 200
+[debug] [2025-08-15T14:24:38.119Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/cot-pwa-mvc:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2025-08-15T14:24:38.119Z] Checked if tokens are valid: true, expires at: 1755271472910
+[debug] [2025-08-15T14:24:38.119Z] Checked if tokens are valid: true, expires at: 1755271472910
+[debug] [2025-08-15T14:24:38.119Z] >>> [apiv2][query] POST https://iam.googleapis.com/v1/projects/cot-pwa-mvc/serviceAccounts/cot-pwa-mvc@appspot.gserviceaccount.com:testIamPermissions [none]
+[debug] [2025-08-15T14:24:38.119Z] >>> [apiv2][body] POST https://iam.googleapis.com/v1/projects/cot-pwa-mvc/serviceAccounts/cot-pwa-mvc@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2025-08-15T14:24:39.843Z] <<< [apiv2][status] POST https://iam.googleapis.com/v1/projects/cot-pwa-mvc/serviceAccounts/cot-pwa-mvc@appspot.gserviceaccount.com:testIamPermissions 200
+[debug] [2025-08-15T14:24:39.844Z] <<< [apiv2][body] POST https://iam.googleapis.com/v1/projects/cot-pwa-mvc/serviceAccounts/cot-pwa-mvc@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2025-08-15T14:24:39.845Z] Checked if tokens are valid: true, expires at: 1755271472910
+[debug] [2025-08-15T14:24:39.845Z] Checked if tokens are valid: true, expires at: 1755271472910
+[debug] [2025-08-15T14:24:39.845Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/cot-pwa-mvc [none]
+[debug] [2025-08-15T14:24:51.011Z] *** [apiv2] error from fetch(https://firebase.googleapis.com/v1beta1/projects/cot-pwa-mvc, {"headers":{},"method":"GET","signal":{}}): FetchError: request to https://firebase.googleapis.com/v1beta1/projects/cot-pwa-mvc failed, reason: getaddrinfo ENOTFOUND firebase.googleapis.com
+[debug] [2025-08-15T14:24:51.011Z] Failed to make request to https://firebase.googleapis.com/v1beta1/projects/cot-pwa-mvc (original: request to https://firebase.googleapis.com/v1beta1/projects/cot-pwa-mvc failed, reason: getaddrinfo ENOTFOUND firebase.googleapis.com)
+[error] 
+[error] Error: Assertion failed: resolving hosting target of a site with no site name or target name. This should have caused an error earlier
