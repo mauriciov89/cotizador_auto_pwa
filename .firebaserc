@@ -1,6 +1,6 @@
 {
   "projects": {
-    "default": "cotizador-auto-pwa"
+    "default": "cot-pwa-mvc"
   },
   "targets": {
     "cotizador-auto-pwa": {
