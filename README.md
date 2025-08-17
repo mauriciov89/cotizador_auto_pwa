@@ -1,12 +1,12 @@
 # Cotizador de Seguros - Nacional
 
-App PWA con autenticación por correo y huella digital.
+App PWA con autenticación por correo y biometría.
 
 ## Funcionalidades
 - ✅ Registro e inicio de sesión con Firebase
-- 🔐 Acceso rápido con huella digital (WebAuthn)
+- 🔐 Acceso rápido con huella digital o Face ID (WebAuthn)
 - 📱 PWA instalable
-- 💬 Compartir por WhatsApp
+- 💬 Compartir cotización por WhatsApp
 
 ## Tecnologías
 - Firebase Authentication
