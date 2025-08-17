@@ -1,5 +1,14 @@
 {
   "projects": {
-    "default": "cot-pwa-mvc"
+    "default": "cotizador-auto-pwa"
+  },
+  "targets": {
+    "cotizador-auto-pwa": {
+      "hosting": {
+        "default": [
+          "cot-pwa-mvc"
+        ]
+      }
+    }
   }
 }
